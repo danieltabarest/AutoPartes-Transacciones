@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LibBasica</name>
+    </assembly>
+    <members>
+        <member name="M:LibBasica.clsCombo.LlenarDdl">
+            <summary>
+            Método que se encarga de recibir un DropDownList vacio, poblarlo con los datos del 
+            procedimiento almacenado indicado y devolverlo lleno. Se devuelve a traves de la
+            propiedad gsDdlGen. Para que este método funcione correctamente debe suministrarse
+            el nombre que se desea para el DataTable (a través de la propiedad gsNomTabla),
+            el nombre del procedimiento almacenado (a través de la propiedad gsSql), El campo
+            de Valor(gsColValor) y el campo de texto(gsColTexto) del DropDownList
+            </summary>
+            <returns>Retorna un valor boleano indicando si pudo ejecutarse correctamente</returns>
+        </member>
+        <member name="M:LibBasica.clsCombo.LlenarCmb">
+            <summary>
+            Método que se encarga de recibir un ComboBox vacio, poblarlo con los datos del 
+            procedimiento almacenado indicado y devolverlo lleno. Se devuelve a traves de la
+            propiedad gsCmbGen. Para que este método funcione correctamente debe suministrarse
+            el nombre que se desea para el DataTable (a través de la propiedad gsNomTabla),
+            el nombre del procedimiento almacenado (a través de la propiedad gsSql), El campo
+            de Valor(gsColValor) y el campo de texto(gsColTexto) del ComboBox
+            </summary>
+            <returns>Retorna un valor boleano indicando si pudo ejecutarse correctamente</returns>
+        </member>
+        <member name="M:LibBasica.clsConexBd.#ctor">
+            <summary>
+            Constructor de la clase para la Gestión Conexion a BD Sql Server
+            </summary>
+        </member>
+        <member name="M:LibBasica.clsConexBd.Finalize">
+            <summary>
+            Destructor de la clase para la Gestión Conexion a BD Sql Server
+            </summary>
+        </member>
+        <member name="M:LibBasica.clsConexBd.ObtenerCadConex">
+            <summary>
+            Metodo que obtiene la cadena de conexion del archivo Xml
+            </summary>
+            <returns>Retorna un valor boleano indicando si pudo obtenida la cadena de conexion</returns>
+        </member>
+        <member name="M:LibBasica.clsConexBd.AbrirConexion">
+            <summary>
+            Metodo que abre la conexión a la BD Sql Server
+            </summary>
+            <returns>Retorna un valor boleano indicando si la conexión fue exitosa o no</returns>
+        </member>
+        <member name="M:LibBasica.clsConexBd.AdicionarParametro(System.Data.ParameterDirection,System.String,System.Data.SqlDbType,System.Int16,System.Object)">
+            <summary>
+            Metodo que adiciona un parametro al objeto command que se inyectará a la BD Sql Server
+            </summary>
+            <param name="pDireccion">
+            Direccion del parametro (IN / OUT)
+            </param>
+            <param name="pNombre">
+            Nombre del parametro
+            </param>
+            <param name="pTipoDato">
+            Tipo de dato del parametro
+            </param>
+            <param name="pTamano">
+            Tamaño segun el tipo de dato del parametro
+            </param>
+            <param name="pValor">
+            Valor que se almacenará en el parametro
+            </param>
+            <returns>Retorna un valor boleano indicando si pudo ser agregado el parametro al objeto command</returns>
+        </member>
+        <member name="M:LibBasica.clsConexBd.ExecSql(System.Boolean)">
+            <summary>
+            Metodo que ejecuta una instruccion o un procedimiento almacenado el cual afecta
+            los registros
+            </summary>
+            <param name="blnTipo">
+            Si es true se ejecuta un procedimiento almacenado, si es false se ejecuta una sentencia sql
+            </param>
+            <returns>Retorna un valor boleano indicando si pudo ejecutarse correctamente</returns>
+        </member>
+        <member name="M:LibBasica.clsConexBd.AbrirTransaccion">
+            <summary>
+            Metodo que ejecuta abre una transaccion en Sql Server
+            </summary>
+            <returns>Retorna un valor boleano indicando si se pudo abrir la transacción</returns>
+        </member>
+        <member name="M:LibBasica.clsConexBd.AceptarTransaccion">
+            <summary>
+            Metodo que confirma todas las instrucciones Sql dentro la transaccion abierta en Sql Server
+            </summary>
+            <returns>Retorna un valor boleano indicando si se pudo confirmar la transacción</returns>
+        </member>
+        <member name="M:LibBasica.clsConexBd.RechazarTransaccion">
+            <summary>
+            Metodo que rechaza todas las instrucciones Sql dentro la transaccion abierta en Sql Server
+            </summary>
+            <returns>Retorna un valor boleano indicando si se pudo rechazar la transacción</returns>
+        </member>
+        <member name="M:LibBasica.clsConexBd.CerrarConexion">
+            <summary>
+            Metodo que Cierra la conexión a la BD Sql Server
+            </summary>
+            <returns>Retorna un valor boleano indicando si se pudo ser cerrada la conexión</returns>
+        </member>
+        <member name="M:LibBasica.clsConexBd.GetDataSet(System.Boolean)">
+            <summary>
+            Metodo que ejecuta una instruccion o un procedimiento almacenado el cual obtiene un
+            conjunto de registros y los retorna en un DataSet (Modelo Desconectado). El conjunto 
+            de registros es devuelto a traves de la propiedad gDataSet
+            </summary>
+            <param name="blnTipo">
+            Si es true se ejecuta un procedimiento almacenado, si es false se ejecuta una sentencia sql
+            </param>
+            <returns>Retorna un valor boleano indicando si pudo ejecutarse correctamente</returns>
+        </member>
+        <member name="M:LibBasica.clsConexBd.GetDataReader(System.Boolean)">
+            <summary>
+            Metodo que ejecuta una instruccion o un procedimiento almacenado el cual obtiene un
+            conjunto de registros y los retorna en un SqlDataReader (Modelo Conectado). El conjunto 
+            de registros es devuelto a traves de la propiedad gDataReader
+            </summary>
+            <param name="blnTipo">
+            Si es true se ejecuta un procedimiento almacenado, si es false se ejecuta una sentencia sql
+            </param>
+            <returns>Retorna un valor boleano indicando si pudo ejecutarse correctamente</returns>
+        </member>
+        <member name="M:LibBasica.clsConexBd.GetScalar(System.Boolean)">
+            <summary>
+            Metodo que ejecuta una instruccion o un procedimiento almacenado el cual obtiene la
+            primera columna de la primera fila del conjunto de registros obtenidos. Este resultado
+            es devuelto a traves de la propiedad gScalar
+            </summary>
+            <param name="blnTipo">
+            Si es true se ejecuta un procedimiento almacenado, si es false se ejecuta una sentencia sql
+            </param>
+            <returns>Retorna un valor boleano indicando si pudo ejecutarse correctamente</returns>
+        </member>
+        <member name="M:LibBasica.clsGrid.#ctor">
+            <summary>
+            Constructor de la Clase clsGrid, el cual se encarga de inicializar el objeto de
+            la clase clsConexBd
+            </summary>
+        </member>
+        <member name="M:LibBasica.clsGrid.LlenarGridWeb">
+            <summary>
+            Método que se encarga de recibir un GridView vacio, poblarlo con los datos del 
+            procedimiento almacenado indicado y devolverlo lleno. Se devuelve a traves de la
+            propiedad gsGvGen. Para que este método funcione correctamente debe suministrarse
+            el nombre que se desea para el DataTable (a través de la propiedad gsNomTabla) y
+            el nombre del procedimiento almacenado (a través de la propiedad gsSql)
+            </summary>
+            <returns>Retorna un valor boleano indicando si pudo ejecutarse correctamente</returns>
+        </member>
+        <member name="M:LibBasica.clsGrid.LlenarGridWin">
+            <summary>
+            Método que se encarga de recibir un DataGrid vacio, poblarlo con los datos del 
+            procedimiento almacenado indicado y devolverlo lleno. Se devuelve a traves de la
+            propiedad gsDgvGen. Para que este método funcione correctamente debe suministrarse
+            el nombre que se desea para el DataTable (a través de la propiedad gsNomTabla) y
+            el nombre del procedimiento almacenado (a través de la propiedad gsSql)
+            </summary>
+            <returns>Retorna un valor boleano indicando si pudo ejecutarse correctamente</returns>
+        </member>
+        <member name="M:LibBasica.clsParamConBd.#ctor">
+            <summary>
+            Constructor de la clase para la conformación de la cadena de conexión
+            </summary>
+        </member>
+        <member name="M:LibBasica.clsParamConBd.GetConnString(System.Boolean)">
+            <summary>
+            Metodo que obtiene la cadena de conexion del archivo Xml
+            </summary>
+            <param name="blnPath">
+            Si es true se lee el archivo xml desde la unidad C, si es false se lee desde el proyecto
+            </param>
+            <returns>Retorna un valor boleano indicando si pudo ser construida la cadena de conexion</returns>
+        </member>
+    </members>
+</doc>
